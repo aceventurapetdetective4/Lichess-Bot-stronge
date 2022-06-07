@@ -7,7 +7,7 @@ engine:                      # Engine settings.
   protocol: "uci"            # "uci" or "xboard"
   ponder: true               # Think on opponent's time.
   polyglot:
-    enabled: true            # Activate polyglot book.
+    enabled false            # Activate polyglot book.
     book:
       standard:              # List of book file paths for variant standard.
        - Goi5.1.bin
@@ -73,8 +73,8 @@ rate_limiting_delay: 0       # Time (in ms) to delay after sending a move to pre
 
 uci_options:               # Arbitrary UCI options passed to the engine.
     Move Overhead: 500        # Increase if your bot flags games too often.
-    Threads: 2               # Max CPU threads the engine can use.
-    Hash: 256                # Max memory (in megabytes) the engine can allocate.
+    Threads: 4               # Max CPU threads the engine can use.
+    Hash: 512               # Max memory (in megabytes) the engine can allocate.
     SyzygyPath: ./syzygy
     SyzygyProbeDepth: 50
     Syzygy50MoveRule: true
@@ -95,26 +95,26 @@ challenge:                   # Incoming challenges.
   accept_bot: true           # Accepts challenges coming from other bots.
   only_bot: false            # Accept challenges by bots only.
   max_increment: 50          # Maximum amount of increment to accept a challenge. The max is 180. Set to 0 for no increment.
-  min_increment: 0           # Minimum amount of increment to accept a challenge.
+  min_increment: 1           # Minimum amount of increment to accept a challenge.
   max_base: 315360000        # Maximum amount of base time to accept a challenge. The max is 315360000 (10 years).
-  min_base: 60                # Minimum amount of base time to accept a challenge.
+  min_base: 60               # Minimum amount of base time to accept a challenge.
   variants:                  # Chess variants to accept (https://lichess.org/variant).
     - standard
 #   - fromPosition
-    - antichess
-    - atomic
+#   - antichess
+#   - atomic
     - chess960
-    - crazyhouse
-    - horde
-    - kingOfTheHill
-    - racingKings
-    - threeCheck
+#   - crazyhouse
+#   - horde
+#   - kingOfTheHill
+#   - racingKings
+#   - threeCheck
   time_controls:             # Time controls to accept.
     - bullet
     - blitz
     - rapid
 #   - classical
-    - correspondence
+#   - correspondence
   modes:                     # Game modes to accept.
     - casual                 # Unrated games.
     - rated                  # Rated games - must comment if the engine doesn't try to win.
