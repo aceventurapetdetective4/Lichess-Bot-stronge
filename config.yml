@@ -1,4 +1,4 @@
-token: "lip_wmF2axrASsfnr792SfSo"    # Lichess OAuth2 Token.
+token: "lip_BZ1ItcVbanc3EYxv6Zxn"    # Lichess OAuth2 Token.
 url: "https://lichess.org/"  # Lichess base URL.
 
 engine:                      # Engine settings.
@@ -7,7 +7,7 @@ engine:                      # Engine settings.
   protocol: "uci"            # "uci" or "xboard"
   ponder: true               # Think on opponent's time.
   polyglot:
-    enabled false            # Activate polyglot book.
+    enabled: true             # Activate polyglot book.
     book:
       standard:              # List of book file paths for variant standard.
        - Goi5.1.bin
@@ -82,7 +82,7 @@ uci_options:               # Arbitrary UCI options passed to the engine.
     Skill Level: 20
     UCI_ShowWDL: false
     UCI_Elo  : 2850
-
+    MultiPV: 1
 correspondence:
     move_time: 60            # Time in seconds to search in correspondence games.
     checkin_period: 1200     # How often to check for opponent moves in correspondence games after disconnecting.
@@ -101,14 +101,14 @@ challenge:                   # Incoming challenges.
   variants:                  # Chess variants to accept (https://lichess.org/variant).
     - standard
 #   - fromPosition
-#   - antichess
-#   - atomic
+    - antichess
+    - atomic
     - chess960
-#   - crazyhouse
-#   - horde
-#   - kingOfTheHill
-#   - racingKings
-#   - threeCheck
+    - crazyhouse
+    - horde
+    - kingOfTheHill
+    - racingKings
+    - threeCheck
   time_controls:             # Time controls to accept.
     - bullet
     - blitz
